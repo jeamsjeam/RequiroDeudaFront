@@ -1,0 +1,12 @@
+2022-12-28 17:18:05 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html --log "ProyectoAngular wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-12-28 17:18:05 - Started 21432
+2022-12-29 15:27:08 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html --log "ProyectoAngular wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-12-29 15:27:09 - Started 5432
+2022-12-29 18:43:16 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html --log "ProyectoAngular wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2022-12-29 18:43:16 - Started 5024
+2023-01-04 15:45:42 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html --log "ProyectoAngular wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-04 15:45:43 - Started 5072
+2023-01-04 16:25:54 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html --log "ProyectoAngular wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-04 16:25:54 - Started 4948
+2023-01-09 09:55:26 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html --log "ProyectoAngular wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-01-09 09:55:26 - Started 4800

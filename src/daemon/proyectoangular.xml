@@ -1,0 +1,25 @@
+<service>
+	<id>proyectoangular.exe</id>
+	<name>ProyectoAngular</name>
+	<description>Servicio para proyecto angular soap</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<logmode>rotate</logmode>
+	<argument>--harmony</argument>
+	<argument>C:\Users\USER\AppData\Roaming\nvm\v18.12.1\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular\src\index.html</argument>
+	<argument>--log</argument>
+	<argument>ProyectoAngular wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<stoptimeout>30sec</stoptimeout>
+	<workingdirectory>C:\Users\USER\source\repos\Requiro\ProyectoAngular\ProyectoAngular</workingdirectory>
+</service>

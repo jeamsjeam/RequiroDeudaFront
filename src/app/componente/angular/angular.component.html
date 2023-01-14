@@ -1,0 +1,242 @@
+<div class="container">
+    <div class="row">
+        <div class="col div-nabvar">
+            <nav class="navbar bg-body-tertiary d-flex justify-content-between align-items-center">
+                <img src="../../../assets/imagenes/LogoRequiro.png" alt="Logo1" class="">
+                <div>
+                    <p class="texto"><b>SERVICIO DE DEUDA DEL SOCIO</b></p>
+                </div>
+                <img src="../../../assets/imagenes/logo1.png" alt="Logo2" class="">
+            </nav>
+        </div>
+    </div>
+    <div class="row pt-5 d-flex justify-content-around">
+        <div class="col-6 ">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Cedula</span>
+                <input #inputCodigo type="text" [(ngModel)]="numberSearch"
+                    class="form-control form-control-personalizado" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" required>
+                <button type="button" class="btn btn-primary" [disabled]="!validar()"
+                    (click)="validar() ? consumo() : null;">Consultar</button>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5 d-flex justify-content-center mb-5" *ngIf="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="pb-5" *ngIf="bandera">
+
+        <div class="row pt-5 d-flex justify-content-around mb-5">
+            <div class="col-5 bordes pt-3">
+                <div class="mb-3">
+                    <div class="row pb-1 pt-2 mb-3">
+                        <div class="col d-flex justify-content-center">
+                            <label><b>Saldo Vencido + No Vencido</b></label>
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Cuota Social</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput"
+                                placeholder="Interes + IVA" [(ngModel)]="deudaCuota">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Saldo Capital</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput" placeholder="Subtotal"
+                                [(ngModel)]="saldoCapital">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Intereses</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput" placeholder="Subtotal"
+                                [(ngModel)]="saldoInteres">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Mora</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput"
+                                placeholder="A Ingresar" [(ngModel)]="listaDatos.Saldomora">
+                        </div>
+                    </div>
+                    <div class="row pb-2 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Total</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput" placeholder="Total"
+                                [(ngModel)]="saldoTotal">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-3">
+                        <div class="col d-flex justify-content-center"
+                            *ngIf="listaDatos.Mensajeerror !== null && listaDatos.Mensajeerror !== ''">
+                            <label>
+                                <p class="text-danger"><b>{{listaDatos.Mensajeerror}}</b></p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 bordes pt-3">
+                <div class="mb-3">
+                    <div class="row pb-1 pt-2 mb-3">
+                        <div class="col d-flex justify-content-center">
+                            <label><b>Saldo Vencido</b></label>
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Cuota Social</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput"
+                                placeholder="Interes + IVA" [(ngModel)]="listaDatos.Deudacuotsocven">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Saldo Capital</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput" placeholder="Subtotal"
+                                [(ngModel)]="listaDatos.Saldocapitalvencido">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Intereses</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput" placeholder="Subtotal"
+                                [(ngModel)]="listaDatos.Saldointeresvencidos">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Mora</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput"
+                                placeholder="A Ingresar" [(ngModel)]="listaDatos.Saldomora">
+                        </div>
+                    </div>
+                    <div class="row pb-2 pt-1">
+                        <div class="col-5 d-flex justify-content-end align-items-center">
+                            <label>Total</label>
+                        </div>
+                        <div class="col-7 input-group-sm pe-4">
+                            <input disabled type="email" class="form-control" id="floatingInput" placeholder="Total"
+                                [(ngModel)]="listaDatos.Saldototalvencido">
+                        </div>
+                    </div>
+                    <div class="row pb-1 pt-3">
+                        <div class="col d-flex justify-content-center"
+                            *ngIf="listaDatos.Mensajeerror !== null && listaDatos.Mensajeerror !== ''">
+                            <label>
+                                <p class="text-danger"><b>{{listaDatos.Mensajeerror}}</b></p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-3" *ngIf="bandera">
+            <hr>
+            <div class="row pt-2 d-flex justify-content-center mb-2">
+                <div class="col-6 text-center">
+                    <label for="" class="form-label"><b>Detalle de deuda</b></label>
+                </div>
+            </div>
+            <div class="row pt-1 d-flex justify-content-center mb-2">
+                <div class="col" [ngClass]="listaDatos?.Xmldelsdtdeudas !== null ? 'table-wrapper-scroll-y my-custom-scrollbar' : ''">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Nro Deuda</th>
+                                <th>Cuota</th>
+                                <th>Fecha Creada</th>
+                                <th>Fecha Vencimiento</th>
+                                <th>Saldo</th>
+                                <th>Saldo Sin Mora</th>
+                                <th>Saldo Capital</th>
+                                <th>Saldo Interes</th>
+                                <th>Saldo IVA</th>
+                                <th>Saldo Mora</th>
+                                <th>Planilla</th>
+                                <th>Dias Atraso</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf=" listaDatos?.Xmldelsdtdeudas !==  null">
+                            <tr *ngFor="let deuda of listaDatos?.Xmldelsdtdeudas.SDTdeudasItem
+                          ; index as i; first as isFirst">
+                                <td>{{deuda.Tipo}}</td>
+                                <td>{{deuda.NroDeuda}}</td>
+                                <td>{{deuda.Cuota}}</td>
+                                <td>{{deuda.FechaCreada}}</td>
+                                <td>{{deuda.FechaVencimiento}}</td>
+                                <td>{{deuda.Saldo}}</td>
+                                <td>{{deuda.SaldoSinMora}}</td>
+                                <td>{{deuda.SaldoCapital}}</td>
+                                <td>{{deuda.SaldoInteres}}</td>
+                                <td>{{deuda.SaldoIVA}}</td>
+                                <td>{{deuda.SaldoMora}}</td>
+                                <td>{{deuda.Planilla}}</td>
+                                <td>{{deuda.DiasAtraso}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-3">
+            <hr>
+            <div class="row pt-2 d-flex justify-content-center mb-2">
+                <div class="col-6 text-center">
+                    <label for="" class="form-label"><b>Detalle de Retencion de Sueldos</b></label>
+                </div>
+            </div>
+            <div class="row pt-1 d-flex justify-content-center mb-2">
+                <div class="col">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Trabajo</th>
+                                <th>Planilla</th>
+                                <th>Estado Planilla</th>
+                                <th>Importe Enviado</th>
+                                <th>Importe Cobrado</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf=" listaDatos.Xmldelsdtimportesaingresar !==  null">
+                            <tr>
+                                <td>{{listaDatos.Xmldelsdtimportesaingresar.SDTimportesAingresarItem.Trabajo}}</td>
+                                <td>{{listaDatos.Xmldelsdtimportesaingresar.SDTimportesAingresarItem.Planilla}}</td>
+                                <td>{{listaDatos.Xmldelsdtimportesaingresar.SDTimportesAingresarItem.estadoPlanilla}}</td>
+                                <td>{{listaDatos.Xmldelsdtimportesaingresar.SDTimportesAingresarItem.importeEnviado}}</td>
+                                <td>{{listaDatos.Xmldelsdtimportesaingresar.SDTimportesAingresarItem.importeCobrado}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
